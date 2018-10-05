@@ -14,7 +14,7 @@ module.exports = class CloudsParser extends Parser {
         return {
             clouds: match.map(group => {
                 return {
-                    coverage: group[1],
+                    code: group[1],
                     meaning: SKY_CONDITIONS[group[1]],
                     altitude: parseInt(group[2], 10) * 100,
                     type: group[3] || null,
