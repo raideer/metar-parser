@@ -44,14 +44,14 @@ console.log(parsed);
    },
    "clouds": [
       {
-         "coverage": "BKN",
+         "code": "BKN",
          "meaning": "broken",
          "altitude": 800,
          "type": null,
          "typeMeaning": null
       },
       {
-         "coverage": "OVC",
+         "code": "OVC",
          "meaning": "overcast",
          "altitude": 4000,
          "type": null,
