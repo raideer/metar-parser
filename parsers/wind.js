@@ -2,7 +2,7 @@ const Parser = require("../parser");
 
 module.exports = class WindParser extends Parser {
     static parse(metar) {
-        const match = ` ${metar} `.match(/\s([0-9]{3}|VRB)([0-9]{2})(G[0-9]{2})?(KT|MPS)\s/);
+        const match = ` ${metar} `.match(/\s([0-9]{3}|VRB)([0-9]{2})(?:(G[0-9]{2}))?(KT|MPS)\s/);
 
         if (!match) {
             return {
