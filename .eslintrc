@@ -1,0 +1,9 @@
+{
+    "extends": "eslint",
+    "parserOptions": {
+        "sourceType": "module"        
+    },
+    "rules": {
+        "no-cond-assign": ["error", "except-parens"]
+    }
+}
