@@ -5,7 +5,7 @@ module.exports = class CorrectionParser extends Parser {
         const match = ` ${metar} `.match(/\sCOR|CC([A-Z])\s/);
 
         return {
-            correction: match ? match[1] : false
+            correction: match ? match[1] : null
         };
     }
 };
