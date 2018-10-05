@@ -12,13 +12,14 @@ module.exports = class RVRParser extends Parser {
         }
 
         return {
-            runway_visual_range: match.map(group => {
-                const min = (RWR_TREND[group[2]] || '') + parseInt(group[3]);
+            runwayVisualRange: match.map(group => {
+                const min = (RWR_TREND[group[2]] || "") + parseInt(group[3], 10);
+
                 return {
                     runway: group[1],
-                    min: (RWR_TREND[group[2]] || '') + parseInt(group[3]),
-                    max: group[5] ? (RWR_TREND[group[4]] || '') + parseInt(group[5]) : min,
-                    trend: RWR_TREND[group[7]] || 'not possible to determine'
+                    min: (RWR_TREND[group[2]] || "") + parseInt(group[3], 10),
+                    max: group[5] ? (RWR_TREND[group[4]] || "") + parseInt(group[5], 10) : min,
+                    trend: RWR_TREND[group[7]] || "not possible to determine"
                 };
             })
         };

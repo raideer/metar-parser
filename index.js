@@ -1,18 +1,3 @@
-// [*] METAR OR SPECI
-// [*] LOCATION
-// [*] DATETIME
-// [*] AUTO
-// [*] WIND
-// [*] VIS
-// [*] RVR
-// [] WX
-// [*] CLOUDS
-// [] CAVOK
-// [*] TEMPDEW
-// [] QNH
-// [] SUPLEMENTARY
-// [] RMK
-
 /**
  * Simple object check.
  * @param {any} item Subject
@@ -71,7 +56,11 @@ module.exports = function parse(metar) {
         require("./parsers/altimeter"),
         require("./parsers/clouds"),
         require("./parsers/runway_visual_range"),
-        require("./parsers/weather")
+        require("./parsers/weather"),
+        require("./parsers/cavok"),
+        require("./parsers/windshear"),
+        require("./parsers/vertical_visibility"),
+        require("./parsers/recent_weather")
     ]
         .map(parser => parser.parse(metar.toUpperCase()))
         .forEach(data => {

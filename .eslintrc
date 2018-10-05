@@ -4,6 +4,7 @@
         "sourceType": "module"        
     },
     "rules": {
-        "no-cond-assign": ["error", "except-parens"]
+        "no-cond-assign": "off",
+        "arrow-body-style": "off"
     }
 }
