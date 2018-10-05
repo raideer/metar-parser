@@ -1,0 +1,106 @@
+# metar-parser
+WORK-IN-PROGRESS
+
+## Example
+```javascript
+const parse = require('metar-parser');
+
+const parsed = parse('METAR CYWG 172000Z 30015G25KT 3/4SM R36/4000FT/D -SN BLSN BKN008 OVC040 M05/M08 A2992 REFZRA WS RWY36 RMK SF5NS3 SLP134');
+console.log(parsed);
+```
+
+```json
+{
+   "auto": false,
+   "station": "CYWG",
+   "time": { 
+      "day": 17,
+      "hour": 20,
+      "minute": 0,
+      "utc": "Wed, 17 Oct 2018 20:00:05 GMT"
+   },
+   "wind": {
+      "direction": 300,
+      "speedKt": 15,
+      "speedMps": 7.72,
+      "gust": 25,
+      "variableDirection": false,
+      "variation": null
+   },
+   "correction": false,
+   "visibility": {
+      "meters": 1720,
+      "feet": 5643
+   },
+   "temperature": {
+      "temperatureC": -5,
+      "dewpointC": -8,
+      "temperatureFh": 23,
+      "dewpointFh": 17.6
+   },
+   "altimeter": {
+      "inchesHg": 29.92,
+      "milibars": 1013
+   },
+   "clouds": [
+      {
+         "coverage": "BKN",
+         "meaning": "broken",
+         "altitude": 800,
+         "type": null,
+         "typeMeaning": null
+      },
+      {
+         "coverage": "OVC",
+         "meaning": "overcast",
+         "altitude": 4000,
+         "type": null,
+         "typeMeaning": null
+      }
+   ],
+   "runwayVisualRange":[
+      {
+         "runway": "36",
+         "min": "4000",
+         "max": "4000",
+         "trend": "downward"
+      }
+   ],
+   "weather":[
+      {
+         "codes": [
+            "SN"
+         ],
+         "intensity": "light",
+         "descriptor": null,
+         "precipitation": "snow",
+         "obscuration": null
+      },
+      {
+         "codes": [
+            "BL",
+            "SN"
+         ],
+         "intensity": "moderate",
+         "descriptor": "blowing",
+         "precipitation": "snow",
+         "obscuration": null
+      }
+   ],
+   "cavok": false,
+   "windshear": [
+      "36"
+   ],
+   "verticalVisibility": null,
+   "recentWeather": [
+      {
+         "code": "FZ",
+         "meaning": "freezing"
+      },
+      {
+         "code": "RA",
+         "meaning": "rain"
+      }
+   ]
+}
+```
