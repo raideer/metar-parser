@@ -1,5 +1,7 @@
 module.exports.UNITS = {
-    FT: "feet"
+    FT: "feet",
+    SM: "statute mile",
+    KM: "kilometer"
 };
 
 module.exports.SKY_CONDITIONS = {
