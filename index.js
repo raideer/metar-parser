@@ -45,11 +45,13 @@ module.exports = function parse(metar) {
     let result = {};
 
     [
+        require("./parsers/type"),
         require("./parsers/auto"),
         require("./parsers/station"),
         require("./parsers/time"),
         require("./parsers/wind"),
         require("./parsers/correction"),
+        require("./parsers/nosig"),
         require("./parsers/wind_variation"),
         require("./parsers/visibility"),
         require("./parsers/tempdew"),
