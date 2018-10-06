@@ -2,7 +2,7 @@ const Parser = require("../parser");
 
 module.exports = class WindParser extends Parser {
     static parse(metar) {
-        const match = ` ${metar} `.match(/\s([0-9]{3}|VRB)([0-9]{2})(?:(G[0-9]{2}))?(KT|MPS)\s/);
+        const match = ` ${metar} `.match(/\s([0-9]{3}|VRB)([0-9]{2})(?:G([0-9]{2}))?(KT|MPS)\s/);
 
         if (!match) {
             return {
@@ -24,10 +24,10 @@ module.exports = class WindParser extends Parser {
 
         return {
             wind: {
-                direction: parseInt(match[1], 10),
+                direction: match[1] === "VRB" ? "VRB" : parseInt(match[1], 10),
                 speedKt,
                 speedMps,
-                gust: match[3] || false,
+                gusting: match[3] ? parseInt(match[3], 10) : false,
                 variableDirection: match[1] === "VRB"
             }
         };
