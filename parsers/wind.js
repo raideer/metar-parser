@@ -27,7 +27,7 @@ module.exports = class WindParser extends Parser {
                 direction: match[1] === "VRB" ? "VRB" : parseInt(match[1], 10),
                 speedKt,
                 speedMps,
-                gusting: match[3] ? parseInt(match[3], 10) : false,
+                gust: match[3] ? parseInt(match[3], 10) : false,
                 variableDirection: match[1] === "VRB"
             }
         };
