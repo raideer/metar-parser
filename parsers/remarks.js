@@ -7,7 +7,7 @@ module.exports = class RemarksParser extends Parser {
 
         if (!match) {
             return {
-                remarks: []
+                remarks: null
             };
         }
 
