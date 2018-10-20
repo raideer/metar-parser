@@ -1,4 +1,5 @@
 const Parser = require("../parser");
+const { convertKTtoMPS, convertMPStoKT } = require("../utils");
 
 module.exports = class WindParser extends Parser {
     static parse(metar) {
@@ -16,10 +17,10 @@ module.exports = class WindParser extends Parser {
 
         if (match[4] === "KT") {
             speedKt = speed;
-            speedMps = Math.round(speed / 1.94384 * 100) / 100;
+            speedMps = convertKTtoMPS(speed);
         } else {
             speedMps = speed;
-            speedKt = Math.round(speed * 1.94384 * 100) / 100;
+            speedKt = convertMPStoKT(speed);
         }
 
         return {
