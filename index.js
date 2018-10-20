@@ -62,7 +62,8 @@ module.exports = function parse(metar) {
         require("./parsers/cavok"),
         require("./parsers/windshear"),
         require("./parsers/vertical_visibility"),
-        require("./parsers/recent_weather")
+        require("./parsers/recent_weather"),
+        require("./parsers/remarks")
     ]
         .map(parser => parser.parse(metar.toUpperCase()))
         .forEach(data => {
