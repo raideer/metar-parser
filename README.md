@@ -1,6 +1,14 @@
 # metar-parser
 Remarks are still Work In Progress
 
+## Installation
+```
+npm i metar-parser
+```
+```
+yarn add metar-parser
+```
+
 ## Example
 ```javascript
 const parse = require('metar-parser');
