@@ -1,5 +1,5 @@
 # metar-parser
-WORK-IN-PROGRESS
+Remarks are still Work In Progress
 
 ## Example
 ```javascript
