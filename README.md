@@ -11,96 +11,105 @@ console.log(parsed);
 
 ```json
 {
-   "auto": false,
-   "station": "CYWG",
-   "time": { 
-      "day": 17,
-      "hour": 20,
-      "minute": 0,
-      "utc": "Wed, 17 Oct 2018 20:00:05 GMT"
+   "type":"METAR",
+   "auto":false,
+   "station":"CYWG",
+   "time":{
+      "day":17,
+      "hour":20,
+      "minute":0,
+      "date":"Wed, 17 Oct 2018 20:00:38 GMT"
    },
-   "wind": {
-      "direction": 300,
-      "speedKt": 15,
-      "speedMps": 7.72,
-      "gust": 25,
-      "variableDirection": false,
-      "variation": null
+   "wind":{
+      "direction":300,
+      "speedKt":15,
+      "speedMps":7.72,
+      "gust":25,
+      "variableDirection":false,
+      "variation":null
    },
-   "correction": false,
-   "visibility": {
-      "meters": 1720,
-      "feet": 5643
+   "correction":false,
+   "nosig":false,
+   "visibility":{
+      "meters":1207,
+      "feet":3960,
+      "miles":0.75,
+      "kilometers":1.21
    },
-   "temperature": {
-      "temperatureC": -5,
-      "dewpointC": -8,
-      "temperatureFh": 23,
-      "dewpointFh": 17.6
+   "temperature":{
+      "celsius":-5,
+      "fahrenheit":23
    },
-   "altimeter": {
-      "inchesHg": 29.92,
-      "milibars": 1013
+   "dewpoint":{
+      "celsius":-8,
+      "fahrenheit":17.6
    },
-   "clouds": [
+   "altimeter":{
+      "inches":29.92,
+      "millibars":1013
+   },
+   "clouds":[
       {
-         "code": "BKN",
-         "meaning": "broken",
-         "altitude": 800,
-         "type": null,
-         "typeMeaning": null
+         "code":"BKN",
+         "meaning":"broken",
+         "altitude":800,
+         "type":null,
+         "typeMeaning":null
       },
       {
-         "code": "OVC",
-         "meaning": "overcast",
-         "altitude": 4000,
-         "type": null,
-         "typeMeaning": null
+         "code":"OVC",
+         "meaning":"overcast",
+         "altitude":4000,
+         "type":null,
+         "typeMeaning":null
       }
    ],
    "runwayVisualRange":[
       {
-         "runway": "36",
-         "min": "4000",
-         "max": "4000",
-         "trend": "downward"
+         "runway":"36",
+         "min":4000,
+         "minRange":"exact",
+         "max":4000,
+         "maxRange":"exact",
+         "trend":"downward"
       }
    ],
    "weather":[
       {
-         "codes": [
+         "codes":[
             "SN"
          ],
-         "intensity": "light",
-         "descriptor": null,
-         "precipitation": "snow",
-         "obscuration": null
+         "intensity":"light",
+         "descriptor":null,
+         "precipitation":"snow",
+         "obscuration":null
       },
       {
-         "codes": [
+         "codes":[
             "BL",
             "SN"
          ],
-         "intensity": "moderate",
-         "descriptor": "blowing",
-         "precipitation": "snow",
-         "obscuration": null
+         "intensity":"moderate",
+         "descriptor":"blowing",
+         "precipitation":"snow",
+         "obscuration":null
       }
    ],
-   "cavok": false,
-   "windshear": [
+   "cavok":false,
+   "windshear":[
       "36"
    ],
-   "verticalVisibility": null,
-   "recentWeather": [
+   "verticalVisibility":null,
+   "recentWeather":[
       {
-         "code": "FZ",
-         "meaning": "freezing"
+         "code":"FZ",
+         "meaning":"freezing"
       },
       {
-         "code": "RA",
-         "meaning": "rain"
+         "code":"RA",
+         "meaning":"rain"
       }
-   ]
+   ],
+   "remarks": {} // Not fully implemented yet
 }
 ```
