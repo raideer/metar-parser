@@ -14,7 +14,8 @@ module.exports.SKY_CONDITIONS = {
     CB: "cumulonimbus",
     TCU: "towering cumulus",
     CU: "cumulus",
-    CI: "cirrus"
+    CI: "cirrus",
+    "///": "no information"
 };
 
 module.exports.RWR_TREND = {
