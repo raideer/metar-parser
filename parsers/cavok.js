@@ -5,7 +5,7 @@ module.exports = class CavokParser extends Parser {
         const match = ` ${metar} `.match(/\sCAVOK\s/);
 
         return {
-            cavok: match ? match[1] : false
+            cavok: !!match
         };
     }
 };

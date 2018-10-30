@@ -5,7 +5,7 @@ module.exports = class AutoParser extends Parser {
         const match = ` ${metar} `.match(/\sAUTO\s/);
 
         return {
-            auto: match ? match[1] : false
+            auto: !!match
         };
     }
 };

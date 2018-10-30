@@ -5,7 +5,7 @@ module.exports = class NosigParser extends Parser {
         const match = ` ${metar} `.match(/\sNOSIG\s/);
 
         return {
-            nosig: match ? match[1] : false
+            nosig: !!match
         };
     }
 };
