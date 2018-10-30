@@ -5,7 +5,7 @@ module.exports = class CloudsParser extends Parser {
     static parse(metar) {
         let part;
         const match = [];
-        const regex = /(CLR|SKC|FEW|SCT|BKN|OVC|VV)([0-9]{3})(CU|CB|TCU|CI)?/g;
+        const regex = /(CLR|SKC|FEW|SCT|BKN|OVC|VV)([0-9/]{3})(CU|CB|TCU|CI|[/]{3})?/g;
 
         while (part = regex.exec(metar)) {
             match.push(part);
