@@ -14,20 +14,20 @@ module.exports = class AltimeterParser extends Parser {
         const value = parseInt(match[2], 10);
 
         let inchesHg;
-        let milibars;
+        let millibars;
 
         if (type === "A") {
             inchesHg = value / 100;
-            milibars = Math.round(value / 100 * 33.8637526);
+            millibars = Math.round(value / 100 * 33.8637526);
         } else if (type === "Q") {
-            milibars = value;
+            millibars = value;
             inchesHg = Math.round(value * 100 * 0.0295301) / 100;
         }
 
         return {
             altimeter: {
-                inchesHg,
-                milibars
+                inches: inchesHg,
+                millibars
             }
         };
     }
