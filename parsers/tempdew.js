@@ -6,7 +6,8 @@ module.exports = class TempDewParser extends Parser {
 
         if (!match) {
             return {
-                temperature: null
+                temperature: null,
+                dewpoint: null
             };
         }
 
@@ -19,10 +20,12 @@ module.exports = class TempDewParser extends Parser {
 
         return {
             temperature: {
-                temperatureC: tempdew[0],
-                dewpointC: tempdew[1],
-                temperatureFh: Math.round((tempdew[0] * 1.8 + 32) * 100) / 100,
-                dewpointFh: Math.round((tempdew[1] * 1.8 + 32) * 100) / 100
+                celsius: tempdew[0],
+                fahrenheit: Math.round((tempdew[0] * 1.8 + 32) * 100) / 100
+            },
+            dewpoint: {
+                celsius: tempdew[1],
+                fahrenheit: Math.round((tempdew[1] * 1.8 + 32) * 100) / 100
             }
         };
     }
