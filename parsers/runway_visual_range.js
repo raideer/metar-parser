@@ -2,6 +2,12 @@ const Parser = require("../parser");
 const { RWR_TREND } = require("../texts");
 
 module.exports = class RVRParser extends Parser {
+
+    /**
+     * Parses Runway Visual Range
+     * @param {string} metar Metar string
+     * @returns {Object} Parsed object
+     */
     static parse(metar) {
         let part;
         const match = [];
@@ -21,7 +27,7 @@ module.exports = class RVRParser extends Parser {
                     min,
                     minRange,
                     max: group[5] ? parseInt(group[5], 10) : min,
-                    maxRange: group[5] ? RWR_TREND[group[4]] || "exact" : minRange,
+                    maxRange: group[5] ? RWR_TREND[group[4]] || "exact" : "exact",
                     trend: RWR_TREND[group[7]] || "not possible to determine"
                 };
             })
