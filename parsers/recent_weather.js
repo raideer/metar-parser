@@ -1,5 +1,5 @@
 const Parser = require("../parser");
-const { WEATHER } = require("../texts");
+const { WEATHER } = require("../strings");
 
 module.exports = class RecentWeatherParser extends Parser {
     static parse(metar) {

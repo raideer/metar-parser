@@ -1,5 +1,5 @@
 const Parser = require("../parser");
-const { UNITS } = require("../texts");
+const { UNITS } = require("../strings");
 
 module.exports = class VisibilityParser extends Parser {
     static parse(metar) {

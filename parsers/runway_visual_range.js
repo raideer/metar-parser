@@ -1,5 +1,5 @@
 const Parser = require("../parser");
-const { RWR_TREND } = require("../texts");
+const { RWR_TREND } = require("../strings");
 
 module.exports = class RVRParser extends Parser {
 

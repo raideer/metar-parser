@@ -1,5 +1,5 @@
 const Parser = require("../parser");
-const { SKY_CONDITIONS } = require("../texts");
+const { SKY_CONDITIONS } = require("../strings");
 
 module.exports = class CloudsParser extends Parser {
     static parse(metar) {
