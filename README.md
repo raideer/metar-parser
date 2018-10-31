@@ -1,5 +1,7 @@
-# metar-parser
-Remarks are still Work In Progress
+# metar-parser [![npm version](https://badge.fury.io/js/metar-parser.svg)](https://badge.fury.io/js/metar-parser)
+Parses METAR and SPECI weather reports.
+
+*Remarks are still Work In Progress*
 
 ## Installation
 ```
