@@ -27,8 +27,11 @@ module.exports = class RemarksParser extends Parser {
                 remark: "AO2",
                 value: "Station is equipped with a rain/snow sensor"
             };
-        } else if (remarkStr.includes("QFE")) {
-            const value = parseInt(remarkStr.substr(3, 3))
+        }
+        
+        // QFE pressure
+        if (match = remarkStr.match(/QFE([0-9]{3})/)) {
+            const value = parseInt(match[1])
             remarks.qfeAltimeter = {
                 millibars: value,
                 inchesHg: Math.round(value * 100 * 0.0295301) / 100
