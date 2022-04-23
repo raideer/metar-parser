@@ -28,6 +28,15 @@ module.exports = class RemarksParser extends Parser {
                 value: "Station is equipped with a rain/snow sensor"
             };
         }
+        
+        // QFE pressure
+        if (match = remarkStr.match(/QFE([0-9]{3})/)) {
+            const value = parseInt(match[1])
+            remarks.qfeAltimeter = {
+                millibars: value,
+                inchesHg: Math.round(value * 100 * 0.0295301) / 100
+            };
+        }
 
         // PEAK WIND
         if (match = remarkStr.match(/PK\sWND\s([0-9]{3})([0-9]{2})\/([0-9]{2})([0-9]{2})/)) {
