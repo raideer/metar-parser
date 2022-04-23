@@ -1,6 +1,6 @@
 {
   "name": "metar-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parses METAR/SPECI weather reports",
   "main": "index.js",
   "scripts": {
